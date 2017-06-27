@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <HomeView props={{message: "Hello!"}}/>
+      <HomeView />
     )
   }
 
