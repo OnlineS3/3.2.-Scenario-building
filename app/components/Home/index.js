@@ -20,7 +20,6 @@ class Home extends React.Component {
       <HomeView />
     )
   }
-
 }
 
 function mapStateToProps(state) {
@@ -28,7 +27,6 @@ function mapStateToProps(state) {
   	exampleStateAttribute: state.exampleStateAttribute
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {

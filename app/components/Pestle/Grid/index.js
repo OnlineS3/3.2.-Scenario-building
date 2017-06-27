@@ -21,7 +21,6 @@ class Grid extends React.Component {
       <GridView props={{boxes: this.props.pestleData}}/>
     )
   }
-
 }
 
 function mapStateToProps(state) {
@@ -29,7 +28,6 @@ function mapStateToProps(state) {
     pestleData: state.pestleData
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {

@@ -20,7 +20,6 @@ class PestleBox extends React.Component {
       <PestleBoxView box={this.props.box} />
     )
   }
-
 }
 
 function mapStateToProps(state, ownProps) {
