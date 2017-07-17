@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import pestleReducer from './pestle';
+import analysisReducer from './analysis';
 
-const rootReducer = combineReducers({ pestleData: pestleReducer, routing: routerReducer });
+const rootReducer = combineReducers({ analysisData: analysisReducer, routing: routerReducer });
 
 export default rootReducer;

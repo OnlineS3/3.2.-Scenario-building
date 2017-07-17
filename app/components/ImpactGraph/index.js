@@ -7,23 +7,25 @@ import { browserHistory } from 'react-router';
 import store from '../../store';
 
 import * as actionCreators from '../../actions/actionCreators';
-import HomeView from './HomeView';
+import ImpactGraphView from './ImpactGraphView';
 
 
-class Home extends React.Component {
+class ImpactGraph extends React.Component {
 
   componentDidMount() {
   }
 
   render() {
     return(
-      <HomeView />
+      <ImpactGraphView props={{data: this.props.data}}/>
     )
   }
 }
 
 function mapStateToProps(state) {
+  console.log("State: ", state)
   return {
+    data: state.analysisData
   }
 }
 
@@ -32,4 +34,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(ImpactGraph);

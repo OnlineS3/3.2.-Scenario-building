@@ -1,15 +1,42 @@
-import mockdata from '../data/mockdata';
+import analysisData from '../data/analysisdata';
 
-const updatePestleData = () => {
+
+const updateAnalysisData = () => {
   return {
-    type: 'UPDATE_PESTLE',
-    boxes: mockdata.boxes
+    type: 'UPDATE_DATA',
+    data: analysisData.rows
   }
 }
 
-export const loadPestleData = () => {
+const removeItemFromState = (id) => {
+  return {
+    type: 'REMOVE_ITEM',
+    id: id
+  }
+}
+
+const addItemToState = (item) => {
+  return {
+    type: 'ADD_ITEM',
+    item: item
+  }
+}
+
+export const loadAnalysisData = () => {
   return dispatch => {
-    dispatch(updatePestleData());
+    dispatch(updateAnalysisData());
+  }
+}
+
+export const createItem = (item) => {
+  return dispatch => {
+    dispatch(addItemToState(item));
+  }
+}
+
+export const removeItem = (id) => {
+  return dispatch => {
+    dispatch(removeItemFromState(id));
   }
 }
 
