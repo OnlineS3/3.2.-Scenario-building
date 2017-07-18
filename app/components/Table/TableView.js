@@ -27,7 +27,7 @@ const TableRow = ({removeItem, rowData}) => {
 }
 
 const TableView = ({props}) => {
-  const { rows, removeItem, createItem } = props
+  const { rows, removeItem, createItem, createAnalysis } = props
   console.log("rows: ", rows);
   return (
     <div>
@@ -44,6 +44,9 @@ const TableView = ({props}) => {
           <CreateNewRow createItem={createItem} />
         </tbody>
       </table>
+      <div>
+        <button onClick={() => createAnalysis()}>Create Analysis</button>
+      </div>
     </div>
   )
 }

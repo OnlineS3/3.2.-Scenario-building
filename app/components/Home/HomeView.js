@@ -8,8 +8,8 @@ import ImpactGraph from '../ImpactGraph';
 const HomeView = ({message}) => {
   return (
     <div>
-      <Table />
       <Header />
+      <Table />
     </div>
   )
 }

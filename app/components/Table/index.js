@@ -21,7 +21,8 @@ class Table extends React.Component {
       <TableView props={{
           rows: this.props.analysisData,
           removeItem: this.props.removeItem,
-          createItem: this.props.createItem
+          createItem: this.props.createItem,
+          createAnalysis: this.props.createAnalysis
         }}
         />
     )
@@ -38,7 +39,8 @@ function mapDispatchToProps(dispatch) {
   return {
     loadAnalysisData: () => dispatch(actionCreators.loadAnalysisData()),
     createItem: (item) => dispatch(actionCreators.createItem(item)),
-    removeItem: (id) => dispatch(actionCreators.removeItem(id))
+    removeItem: (id) => dispatch(actionCreators.removeItem(id)),
+    createAnalysis: () => dispatch(actionCreators.createAnalysis("Testianalyysi"))
   }
 }
 

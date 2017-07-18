@@ -22,15 +22,48 @@ const addItemToState = (item) => {
   }
 }
 
+export const createAnalysis = (name) => {
+  return dispatch => { // Redux thunk, helps with async operations
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({name: name})
+    }
+    fetch('http://localhost:8080/api/analysis', options).then((response) => {
+      return response.json().then((json) => {
+        // dispatch(updateStoreWith(json)); // Do something with the fetched data
+        console.log("Done.", json);
+      })
+    })
+  }
+}
+
+
 export const loadAnalysisData = () => {
   return dispatch => {
     dispatch(updateAnalysisData());
   }
 }
 
-export const createItem = (item) => {
-  return dispatch => {
-    dispatch(addItemToState(item));
+export const createItem = (item, analysisId) => {
+  return dispatch => { // Redux thunk, helps with async operations
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({item: item, analysisId: analysisId})
+    }
+    fetch('http://localhost:8080/api/item', options).then((response) => {
+      return response.json().then((json) => {
+        // dispatch(updateStoreWith(json)); // Do something with the fetched data
+        console.log("Done.", json);
+      })
+    })
   }
 }
 

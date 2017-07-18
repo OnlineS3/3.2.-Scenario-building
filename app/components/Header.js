@@ -6,6 +6,8 @@ const Header = () => {
     <div>
       <h1>Scenario building</h1>
       <p>This tool helps you in building scenarios.</p>
+      <a href="/login">Login</a>
+      <a href="/logout">Logout</a>
     </div>
   )
 }
