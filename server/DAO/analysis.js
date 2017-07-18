@@ -11,21 +11,17 @@ const Analysis = {
         models.Analysis.create({
           name: name
         }, {returning: true}).then((createdAnalysis) => {
-          console.log("USER ====");
-          console.log(user);
-          console.log("ANALYSIS ====");
-          console.log(createdAnalysis);
           user.addAnalysis(createdAnalysis).then(() => {
             console.log("Analysis created.");
             return true;
           });
         });
       }
-    });
+    })
   },
 
   checkUserAccess: (id, displayName) => {
-    return models.Anaysis.find({where: {id: id}}).then(analysis) => {
+    return models.Analysis.find({where: {id: id}}).then((analysis) => {
       if (!analysis) {
         return false
       }
@@ -36,8 +32,8 @@ const Analysis = {
           return analysisUser.authUserId == displayName
         }
       })
-    }
-  }
+    })
+  },
 
   find: (id, displayName) => {
     return models.Analysis.find({where: {id: id}}).then((analysis) => {
@@ -62,7 +58,6 @@ const Analysis = {
             items: items
           }
         });
-        // models.Item.findAll({where: {analysisUuid: analysisUuid}}).
       })
     })
   },
