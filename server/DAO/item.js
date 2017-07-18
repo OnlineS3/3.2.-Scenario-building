@@ -3,11 +3,11 @@ const models = require('../models/index');
 const Item = {
 
   create: (item, analysisId, userId) => {
-    models.Analysis.find({where: {id: analysisId}}).then((analysis) => {
+    return models.Analysis.find({where: {id: analysisId}}).then((analysis) => {
       if (!analysis) {
         return false;
       } else {
-        models.Item.create({
+        return models.Item.create({
           label: item.label,
           uncertainty: item.uncertainty,
           impact: item.impact,

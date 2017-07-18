@@ -8,7 +8,7 @@ const Analysis = {
         console.log("Tried to create a new analysis, but no such user existed.");
         return false;
       } else {
-        models.Analysis.create({
+        return models.Analysis.create({
           name: name
         }, {returning: true}).then((createdAnalysis) => {
           user.addAnalysis(createdAnalysis).then(() => {
@@ -25,7 +25,7 @@ const Analysis = {
       if (!analysis) {
         return false
       }
-      analysis.getUser().then((analysisUser) => {
+      return analysis.getUser().then((analysisUser) => {
         if (!analysisUser) {
           return false;
         } else {
@@ -43,7 +43,7 @@ const Analysis = {
         return false;
       }
       console.log("Getting user.");
-      analysis.getUser().then((analysisUser) => {
+      return analysis.getUser().then((analysisUser) => {
         if (!analysisUser) {
           console.log("This analysis had no user. Analysis id: ", analysis.id);
           return false;
@@ -52,7 +52,7 @@ const Analysis = {
           console.log("User mismatch. The user is not authorized to access this analysis.");
           return false;
         }
-        analysis.getItems().then((items) => {
+        return analysis.getItems().then((items) => {
           return {
             analysis: analysis,
             items: items
@@ -60,6 +60,20 @@ const Analysis = {
         });
       })
     })
+  },
+
+  findAll: (displayName) => {
+    return models.User.find({where: {authUserId: displayName}}).then((user) => {
+      if (!user) {
+        console.log("Returning empty array because no user was found.");
+        return []
+      } else {
+        return user.getAnalyses().then((analyses) => {
+          console.log("returning ", analyses.length, " analyses.");
+          return analyses;
+        });
+      }
+    });
   },
 
   delete: (id) => {

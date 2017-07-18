@@ -3,7 +3,7 @@
 const db = require('../models/index');
 
 const initializer = {
-  initDb: (force = true) => {
+  initDb: (force = false) => {
     db.sequelize.sync({force: force})
   },
 

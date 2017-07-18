@@ -7,33 +7,34 @@ import { browserHistory } from 'react-router';
 import store from '../../store';
 
 import * as actionCreators from '../../actions/actionCreators';
-import * as auth from '../../actions/authActionCreators';
-import HomeView from './HomeView';
+
+import StartView from './StartView';
 
 
-class Home extends React.Component {
+
+class Start extends React.Component {
 
   componentDidMount() {
-    this.props.checkAuthentication()
+    this.props.loadAnalyses();
   }
 
   render() {
     return(
-      <HomeView loggedIn={this.props.auth}/>
+      <StartView analyses={this.props.analyses} />
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth
+    analyses: state.analyses
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    checkAuthentication: () => dispatch(auth.checkAuthentication())
+    loadAnalyses: () => dispatch(actionCreators.loadAnalyses())
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Start);

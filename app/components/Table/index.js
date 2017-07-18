@@ -13,7 +13,7 @@ import TableView from  './TableView';
 class Table extends React.Component {
 
   componentDidMount() {
-    this.props.loadAnalysisData();
+    this.props.loadAnalysisData(this.props.analysisId);
   }
 
   render() {
@@ -29,9 +29,10 @@ class Table extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return {
-    analysisData: state.analysisData
+    analysisData: state.analysisData,
+    analysisId: ownProps.props.analysisId
   }
 }
 

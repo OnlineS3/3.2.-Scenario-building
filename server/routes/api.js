@@ -8,21 +8,38 @@ const itemDAO = require('../DAO/item');
 
 
 
-router.get('/', (req, res) => {
+router.get('/auth', (req, res) => {
   var user = {}
   if (req.session.passport && req.session.passport.user) {
     user = req.session.passport.user;
     res.send({
-      "logged_in": res.locals.loggedIn,
+      "loggedIn": res.locals.loggedIn,
       "username": user.displayName
     })
   } else {
     res.send({
-      "error": "please log in"
+      "loggedIn": false
     })
   }
 });
 
+// Get all analyses for a specific username
+
+router.get('/analyses', (req, res) => {
+  var user = {}
+  if (req.session.passport && req.session.passport.user) {
+    user = req.session.passport.user;
+    analysisDAO.findAll(user.displayName).then((analyses) => {
+      console.log("Returning requested analyses: ", analyses)
+      return res.status(200).json({"analyses": analyses});
+    });
+  } else {
+    return res.status(403).json({"status": "Unauthorized"});
+  }
+});
+
+
+// Get a specific analysis by its id
 router.get('/analysis', (req, res) => {
   var user = {}
   if (req.session.passport && req.session.passport.user) {
@@ -51,6 +68,7 @@ router.post('/analysis', (req, res) => {
     user = req.session.passport.user;
     const name = req.body.name;
     analysisDAO.create(name, user.displayName).then((createdAnalysis) => {
+      console.log("Boolean value returned: ", createdAnalysis)
       if (createdAnalysis) {
         return res.status(201).json({"status": "Analysis created."});
       } else {

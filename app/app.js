@@ -6,6 +6,7 @@ import './styles/main.scss';
 
 import App from './components/App';
 import Home from './components/Home';
+import Analysis from './components/Analysis';
 
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
@@ -16,6 +17,7 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute name="home" component={Home}></IndexRoute>
+        <Route path="/analysis/:analysisId" name="analysis" component={Analysis}></Route>
       </Route>
     </Router>
   </Provider>
