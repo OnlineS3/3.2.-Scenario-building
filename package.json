@@ -52,6 +52,7 @@
     "react-transform-hmr": "1.0.4",
     "redbox-react": "1.4.2",
     "redux": "3.7.1",
+    "redux-form": "^7.0.1",
     "redux-thunk": "^2.2.0",
     "rimraf": "2.6.1",
     "sass-loader": "6.0.6",
