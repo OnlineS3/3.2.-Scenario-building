@@ -40,21 +40,20 @@ NewItemForm = reduxForm({
   form: 'newItem'
 })(NewItemForm)
 
-const TableRow = ({removeItem, rowData}) => {
-  console.log(removeItem)
+const TableRow = ({removeItemFromAnalysis, rowData}) => {
   const { id, label, uncertainty, impact } = rowData
   return (
     <tr>
       <td>{label}</td>
       <td>{uncertainty}</td>
       <td>{impact}</td>
-      <td><button onClick={() => {removeItem(id)}}>Remove</button></td>
+      <td><button onClick={() => {removeItemFromAnalysis(id)}}>Remove</button></td>
     </tr>
   )
 }
 
 const TableView = ({props}) => {
-  const { rows, removeItem, addItemToAnalysis } = props
+  const { rows, removeItemFromAnalysis, addItemToAnalysis } = props
   console.log("rows: ", rows);
   return (
     <div>
@@ -67,7 +66,7 @@ const TableView = ({props}) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map((rowData, i) => <TableRow key={i} removeItem={removeItem} rowData={rowData} />)}
+          {rows.map((rowData, i) => <TableRow key={i} removeItemFromAnalysis={removeItemFromAnalysis} rowData={rowData} />)}
           <NewItemForm onSubmit={addItemToAnalysis} />
         </tbody>
       </table>

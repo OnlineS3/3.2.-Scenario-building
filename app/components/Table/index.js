@@ -15,9 +15,11 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
     this.addItemToAnalysis = this.addItemToAnalysis.bind(this);
+    this.removeItemFromAnalysis = this.removeItemFromAnalysis.bind(this);
   }
 
   componentDidMount() {
+    console.log(this.props.analysisId);
     this.props.loadAnalysis(this.props.analysisId);
   }
 
@@ -26,12 +28,16 @@ class Table extends React.Component {
     this.props.createItem(item, this.props.analysisId);
   }
 
+  removeItemFromAnalysis(itemId) {
+    this.props.deleteItem(itemId);
+  }
+
   render() {
     return(
       <TableView props={{
           analysisId: this.props.analysisId,
           rows: this.props.analysisData,
-          removeItem: this.props.removeItem,
+          removeItemFromAnalysis: this.removeItemFromAnalysis,
           addItemToAnalysis: this.addItemToAnalysis,
           createAnalysis: this.props.createAnalysis
         }}
@@ -49,9 +55,9 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAnalysis: () => dispatch(actionCreators.loadAnalysis()),
+    loadAnalysis: (analysisId) => dispatch(actionCreators.loadAnalysis(analysisId)),
     createItem: (item, analysisId) => dispatch(actionCreators.createItem(item, analysisId)),
-    removeItem: (id) => dispatch(actionCreators.removeItem(id)),
+    deleteItem: (itemId) => dispatch(actionCreators.deleteItem(itemId)),
     createAnalysis: () => dispatch(actionCreators.createAnalysis("Testianalyysi"))
   }
 }

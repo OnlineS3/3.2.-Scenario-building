@@ -6,12 +6,12 @@ const analysisReducer = (state = [], action) => {
   }
   if (action.type === "ADD_ITEM") {
     console.log("Adding item to state");
-    return state;
+    return [...state, action.data]
   }
   if (action.type === "REMOVE_ITEM") {
     console.log("Removing item...");
-    console.log(action.id)
-    return state.filter(item => item.id !== action.id)
+    console.log(action.itemId)
+    return state.filter(item => item.id !== action.itemId)
   }
   return state;
 }

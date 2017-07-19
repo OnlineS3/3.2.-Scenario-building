@@ -40,16 +40,16 @@ router.get('/analyses', (req, res) => {
 
 
 // Get a specific analysis by its id
-router.get('/analysis', (req, res) => {
+router.get('/analysis/:analysisId', (req, res) => {
   var user = {}
   if (req.session.passport && req.session.passport.user) {
     user = req.session.passport.user;
-    const analysisId = req.query.analysisId;
+    const analysisId = req.params.analysisId;
     analysisDAO.find(analysisId, user.displayName).then((analysis) => {
       if (!analysis) {
         return res.status(404).json({"err": "Not found."})
       } else {
-        return res.send(analysis)
+        return res.status(200).json({"status": "ok", analysis: analysis})
       }
     })
   } else {
@@ -117,7 +117,7 @@ router.post('/item', (req, res) => {
       } else {
         itemDAO.create(item, analysisId, user.displayName).then((createdItem) => {
           if (createdItem) {
-            return res.status(201).json({"status": "Item created."});
+            return res.status(201).json({"status": "ok", "item": createdItem});
           } else {
             return res.status(403).json({"status": "No item was created."});
           }
@@ -128,5 +128,26 @@ router.post('/item', (req, res) => {
     return res.status(403).json({"status": "Unauthorized"});
   }
 });
+
+router.delete('/item', (req, res) => {
+  console.log("Deleting an item...");
+  var user = {}
+  if (req.session.passport && req.session.passport.user) {
+    console.log("Was authorized.");
+    user = req.session.passport.user;
+    const itemId = req.body.itemId;
+    itemDAO.delete(itemId, user.displayName).then((result) => {
+      console.log("Result was:", result);
+      if (result) {
+        return res.status(200).json({"status": "ok"});
+      } else {
+        return res.status(403).json({"status": "Unauthorized"});
+      }
+    })
+  } else {
+    return res.status(403).json({"status": "Unauthorized"});
+  }
+});
+
 
 module.exports = router;

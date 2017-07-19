@@ -41,7 +41,8 @@ const Analysis = {
     return models.Analysis.find({where: {id: id}}).then((analysis) => {
       console.log("Got here");
       if (!analysis) {
-        console.log("Analysis not found.");
+        console.log("Analysis not found: ", id);
+        console.log(analysis);
         return false;
       }
       console.log("Getting user.");
