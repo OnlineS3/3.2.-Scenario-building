@@ -18,7 +18,7 @@ class Analysis extends React.Component {
 
   render() {
     return (
-      <AnalysisView analysisId={"05686df0-047c-478e-97f1-a7f01be12f9"} />
+      <AnalysisView analysisId={this.props.params.analysisId} />
     )
     // return(
     //   <AnalysisView analysisId={this.props.params.analysisId} />

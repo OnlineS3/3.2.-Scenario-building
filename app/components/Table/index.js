@@ -13,7 +13,7 @@ import TableView from  './TableView';
 class Table extends React.Component {
 
   componentDidMount() {
-    this.props.loadAnalysisData(this.props.analysisId);
+    this.props.loadAnalysis(this.props.analysisId);
   }
 
   render() {
@@ -30,15 +30,16 @@ class Table extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
+  console.log(ownProps);
   return {
     analysisData: state.analysisData,
-    analysisId: ownProps.props.analysisId
+    analysisId: ownProps.analysisId
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAnalysisData: () => dispatch(actionCreators.loadAnalysisData()),
+    loadAnalysis: () => dispatch(actionCreators.loadAnalysis()),
     createItem: (item) => dispatch(actionCreators.createItem(item)),
     removeItem: (id) => dispatch(actionCreators.removeItem(id)),
     createAnalysis: () => dispatch(actionCreators.createAnalysis("Testianalyysi"))

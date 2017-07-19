@@ -77,7 +77,7 @@ export const createAnalysis = (name) => {
   }
 }
 
-export const loadAnalysisData = () => {
+export const loadAnalysis = () => {
   return dispatch => {
     dispatch(updateAnalysisData());
   }

@@ -7,7 +7,20 @@ const analysesList = (analyses) => {
   if (analyses.length == 0) {
     return <div><p>You have no analyses yet</p></div>
   } else {
-    return <div>{analyses.map((analysis) => <div><p>{analysis.name}</p></div>)}</div>
+    return (
+      <div>
+        {analyses.map((analysis, i) => (
+          <div key={i} className="flex-container">
+            <div>
+              <p>{analysis.name}</p>
+            </div>
+            <div>
+              <Link to={`/analysis/${analysis.id}`}>Edit</Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    )
   }
 }
 
