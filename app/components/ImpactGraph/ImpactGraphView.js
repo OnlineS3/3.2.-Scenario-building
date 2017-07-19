@@ -44,11 +44,7 @@ const ImpactGraphView = ({props}) => {
         yAxisClassName = 'y-axis',
         scatterClassName = 'test-line-dot-class'
 
-  return (data.length == 0) ?
-    <div>
-      <p>No data</p>
-    </div>
-  : <div>
+  return <div>
       <h3>ImpactGraphView</h3>
       <ScatterPlot
         data={data}
