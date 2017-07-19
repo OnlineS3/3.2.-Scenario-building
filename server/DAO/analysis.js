@@ -24,14 +24,15 @@ const Analysis = {
     return models.Analysis.find({where: {id: id}}).then((analysis) => {
       if (!analysis) {
         return false
+      } else {
+        return analysis.getUser().then((analysisUser) => {
+          if (!analysisUser) {
+            return false;
+          } else {
+            return analysisUser.authUserId == displayName
+          }
+        })
       }
-      return analysis.getUser().then((analysisUser) => {
-        if (!analysisUser) {
-          return false;
-        } else {
-          return analysisUser.authUserId == displayName
-        }
-      })
     })
   },
 
@@ -76,7 +77,25 @@ const Analysis = {
     });
   },
 
-  delete: (id) => {
+  delete: (analysisId, displayName) => {
+    return models.Analysis.find({where: {id: analysisId}}).then((analysis) => {
+      if (!analysis) {
+        console.log("No such analysis existed.")
+        return false;
+      } else {
+        return analysis.getUser().then((user) => {
+          if (user.authUserId != displayName) {
+            console.log("Unauthorized to delete this analysis");
+            return false;
+          } else {
+            return analysis.destroy().then((result) => {
+              console.log("Analysis deleted.");
+              return true;
+            })
+          }
+        })
+      }
+    })
   }
 }
 

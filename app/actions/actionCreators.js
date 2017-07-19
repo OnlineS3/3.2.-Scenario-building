@@ -91,6 +91,7 @@ export const createAnalysis = (values) => {
 }
 
 export const deleteAnalysis = (id) => {
+  console.log("Deleting analysis with id: ", id);
   return dispatch => { // Redux thunk, helps with async operations
     const options = {
       method: 'DELETE',
@@ -98,17 +99,16 @@ export const deleteAnalysis = (id) => {
         'Content-Type': 'application/json'
       },
       credentials: 'same-origin',
-      body: JSON.stringify({id: id})
+      body: JSON.stringify({analysisId: id})
     }
     fetch('http://localhost:8080/api/analysis', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         //dispatch(addAnalysisToState(json))
-        if (json.status == true) {
-          console.log("Success: ", json.analysis)
+        if (json.status == "ok") {
           dispatch({
             type: "REMOVE_ANALYSIS",
-            id: id
+            analysisId: id
           })
         } else {
           console.log("Failure: ", json.status)

@@ -4,7 +4,8 @@ import { Field, reduxForm } from 'redux-form';
 
 import Table from '../Table';
 
-const analysesList = (analyses) => {
+const analysesList = (props) => {
+  const {analyses, deleteAnalysis} = props
   if (analyses.length == 0) {
     return <div><p>You have no analyses yet</p></div>
   } else {
@@ -17,6 +18,9 @@ const analysesList = (analyses) => {
             </div>
             <div>
               <Link to={`/analysis/${analysis.id}`}>Edit</Link>
+            </div>
+            <div>
+              <button onClick={() => deleteAnalysis(analysis.id)}>Delete</button>
             </div>
           </div>
         ))}
@@ -43,11 +47,11 @@ NewAnalysisForm = reduxForm({
 })(NewAnalysisForm)
 
 const StartView = ({props}) => {
-  const { analyses, createAnalysis } = props;
+  const { analyses, createAnalysis, deleteAnalysis } = props;
   return(
     <div>
       <h3>Your analyses</h3>
-      {analysesList(analyses)}
+      {analysesList({analyses: analyses, deleteAnalysis: deleteAnalysis})}
       <NewAnalysisForm onSubmit={createAnalysis} />
     </div>
   )

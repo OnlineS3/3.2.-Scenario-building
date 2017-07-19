@@ -80,6 +80,26 @@ router.post('/analysis', (req, res) => {
   }
 });
 
+router.delete('/analysis', (req, res) => {
+  console.log("Deleting an analysis...");
+  var user = {}
+  if (req.session.passport && req.session.passport.user) {
+    console.log("Was authorized.");
+    user = req.session.passport.user;
+    const analysisId = req.body.analysisId;
+    analysisDAO.delete(analysisId, user.displayName).then((result) => {
+      console.log("Result was:", result);
+      if (result) {
+        return res.status(200).json({"status": "ok"});
+      } else {
+        return res.status(403).json({"status": "Unauthorized"});
+      }
+    })
+  } else {
+    return res.status(403).json({"status": "Unauthorized"});
+  }
+});
+
 
 /* Create a new analysis item, and add it to an existing analysis.
 * An analysis must always exist before an item may be added.
