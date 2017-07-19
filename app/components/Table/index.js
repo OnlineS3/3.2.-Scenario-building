@@ -12,16 +12,27 @@ import TableView from  './TableView';
 
 class Table extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.addItemToAnalysis = this.addItemToAnalysis.bind(this);
+  }
+
   componentDidMount() {
     this.props.loadAnalysis(this.props.analysisId);
+  }
+
+  addItemToAnalysis(item) {
+    console.log("Adding item: ", item);
+    this.props.createItem(item, this.props.analysisId);
   }
 
   render() {
     return(
       <TableView props={{
+          analysisId: this.props.analysisId,
           rows: this.props.analysisData,
           removeItem: this.props.removeItem,
-          createItem: this.props.createItem,
+          addItemToAnalysis: this.addItemToAnalysis,
           createAnalysis: this.props.createAnalysis
         }}
         />
@@ -30,7 +41,6 @@ class Table extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log(ownProps);
   return {
     analysisData: state.analysisData,
     analysisId: ownProps.analysisId
@@ -40,7 +50,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return {
     loadAnalysis: () => dispatch(actionCreators.loadAnalysis()),
-    createItem: (item) => dispatch(actionCreators.createItem(item)),
+    createItem: (item, analysisId) => dispatch(actionCreators.createItem(item, analysisId)),
     removeItem: (id) => dispatch(actionCreators.removeItem(id)),
     createAnalysis: () => dispatch(actionCreators.createAnalysis("Testianalyysi"))
   }

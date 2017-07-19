@@ -26,6 +26,7 @@ const Analysis = {
         return false
       } else {
         return analysis.getUser().then((analysisUser) => {
+          console.log("AnalysisUser: ", analysisUser);
           if (!analysisUser) {
             return false;
           } else {

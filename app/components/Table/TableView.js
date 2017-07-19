@@ -1,17 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router';
+import _ from 'lodash';
 
+import { Field, reduxForm } from 'redux-form';
 
-const CreateNewRow = ({createItem}) => {
-  return (
-    <tr>
-      <td><input type="text" name="Label"/></td>
-      <td><input type="text" name="Uncertainty"/></td>
-      <td><input type="text" name="Impact"/></td>
-      <td><button onClick={() => {createItem()}}>Add</button></td>
-    </tr>
+const numericOptions = (fieldName, min, max) => {
+  const valueRange = _.range(min, max+1);
+  return(
+    <Field name={fieldName} component="select">
+      {valueRange.map((value) =>
+        <option value={value} key={value}>{value}</option>
+      )}
+    </Field>
   )
 }
+let NewItemForm = (props) => {
+  const { handleSubmit } = props;
+  const valueRange = _.range(1, 11);
+  return (
+    <form onSubmit={handleSubmit} >
+      <div>
+        <label htmlFor="label">Label</label>
+        <Field name="label" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="uncertainty">Uncertainty</label>
+        {numericOptions("uncertainty", 1, 10)}
+      </div>
+      <div>
+        <label htmlFor="impact">Impact</label>
+        {numericOptions("impact", 1, 10)}
+      </div>
+      <button type="submit">Create</button>
+    </form>
+  )
+}
+
+NewItemForm = reduxForm({
+  form: 'newItem'
+})(NewItemForm)
 
 const TableRow = ({removeItem, rowData}) => {
   console.log(removeItem)
@@ -27,7 +54,7 @@ const TableRow = ({removeItem, rowData}) => {
 }
 
 const TableView = ({props}) => {
-  const { rows, removeItem, createItem, createAnalysis } = props
+  const { rows, removeItem, addItemToAnalysis } = props
   console.log("rows: ", rows);
   return (
     <div>
@@ -41,12 +68,9 @@ const TableView = ({props}) => {
         </thead>
         <tbody>
           {rows.map((rowData, i) => <TableRow key={i} removeItem={removeItem} rowData={rowData} />)}
-          <CreateNewRow createItem={createItem} />
+          <NewItemForm onSubmit={addItemToAnalysis} />
         </tbody>
       </table>
-      <div>
-        <button onClick={() => createAnalysis()}>Create Analysis</button>
-      </div>
     </div>
   )
 }
