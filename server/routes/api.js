@@ -70,7 +70,7 @@ router.post('/analysis', (req, res) => {
     analysisDAO.create(name, user.displayName).then((createdAnalysis) => {
       console.log("Boolean value returned: ", createdAnalysis)
       if (createdAnalysis) {
-        return res.status(201).json({"status": "Analysis created."});
+        return res.status(201).json({"status": true, "analysis": createdAnalysis});
       } else {
         return res.status(404).json({"status": "Failed to create a new analysis"});
       }

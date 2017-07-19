@@ -11,9 +11,9 @@ const Analysis = {
         return models.Analysis.create({
           name: name
         }, {returning: true}).then((createdAnalysis) => {
-          user.addAnalysis(createdAnalysis).then(() => {
+          return user.addAnalysis(createdAnalysis).then(() => {
             console.log("Analysis created.");
-            return true;
+            return createdAnalysis;
           });
         });
       }
