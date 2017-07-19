@@ -57,7 +57,14 @@ export const loadAnalyses = () => {
 
 // Single analysis
 
-export const createAnalysis = (name) => {
+const addAnalysisToState = (analysis) => {
+  return {
+    type: "ADD_ANALYSIS",
+    data: analysis
+  }
+}
+
+export const createAnalysis = (values) => {
   console.log("creating new analysis...");
   return dispatch => { // Redux thunk, helps with async operations
     const options = {
@@ -66,12 +73,46 @@ export const createAnalysis = (name) => {
         'Content-Type': 'application/json'
       },
       credentials: 'same-origin',
-      body: JSON.stringify({name: name})
+      body: JSON.stringify({name: values.analysisName})
     }
     fetch('http://localhost:8080/api/analysis', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
-        console.log("Done.", json);
+        //dispatch(addAnalysisToState(json))
+        if (json.status == true) {
+          console.log("Success: ", json.analysis)
+          dispatch(addAnalysisToState(json.analysis))
+        } else {
+          console.log("Failure: ", json.status)
+        }
+      })
+    })
+  }
+}
+
+export const deleteAnalysis = (id) => {
+  return dispatch => { // Redux thunk, helps with async operations
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({id: id})
+    }
+    fetch('http://localhost:8080/api/analysis', options).then((response) => {
+      return response.json().then((json) => {
+        // dispatch(updateStoreWith(json)); // Do something with the fetched data
+        //dispatch(addAnalysisToState(json))
+        if (json.status == true) {
+          console.log("Success: ", json.analysis)
+          dispatch({
+            type: "REMOVE_ANALYSIS",
+            id: id
+          })
+        } else {
+          console.log("Failure: ", json.status)
+        }
       })
     })
   }

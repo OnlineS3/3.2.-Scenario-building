@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Field, reduxForm } from 'redux-form';
 
 import Table from '../Table';
 
@@ -24,12 +25,30 @@ const analysesList = (analyses) => {
   }
 }
 
-const StartView = ({analyses}) => {
+let NewAnalysisForm = (props) => {
+  const { handleSubmit } = props;
+  return (
+    <form onSubmit={handleSubmit} >
+      <div>
+        <label htmlFor="analysisName">Analysis name</label>
+        <Field name="analysisName" component="input" type="text" />
+      </div>
+      <button type="submit">Create</button>
+    </form>
+  )
+}
+
+NewAnalysisForm = reduxForm({
+  form: 'newAnalysis'
+})(NewAnalysisForm)
+
+const StartView = ({props}) => {
+  const { analyses, createAnalysis } = props;
   return(
     <div>
       <h3>Your analyses</h3>
       {analysesList(analyses)}
-      <button>New analysis</button>
+      <NewAnalysisForm onSubmit={createAnalysis} />
     </div>
   )
 }

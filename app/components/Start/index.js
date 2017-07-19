@@ -20,7 +20,10 @@ class Start extends React.Component {
 
   render() {
     return(
-      <StartView analyses={this.props.analyses} />
+      <StartView props={{
+          analyses: this.props.analyses,
+          createAnalysis: this.props.createAnalysis
+        }} />
     )
   }
 }
@@ -33,7 +36,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAnalyses: () => dispatch(actionCreators.loadAnalyses())
+    loadAnalyses: () => dispatch(actionCreators.loadAnalyses()),
+    createAnalysis: (values) => dispatch(actionCreators.createAnalysis(values))
   }
 }
 

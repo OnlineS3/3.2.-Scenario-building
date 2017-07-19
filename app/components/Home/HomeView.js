@@ -5,11 +5,12 @@ import Header from '../Header';
 import Table from '../Table';
 import ImpactGraph from '../ImpactGraph';
 import Start from '../Start';
+import Nav from '../Nav';
 
 
 const HomeView = (props) => {
   const loggedIn = props.loggedIn
-  console.log("Checking auth on HomeView: ", loggedIn)
+  console.log("Checking auth on HomeView: ", loggedIn);
   if (loggedIn) {
     return (
       <div>
