@@ -36,7 +36,7 @@ class Table extends React.Component {
     return(
       <TableView props={{
           analysisId: this.props.analysisId,
-          rows: this.props.analysisData,
+          rows: this.props.analysisData.items,
           removeItemFromAnalysis: this.removeItemFromAnalysis,
           addItemToAnalysis: this.addItemToAnalysis,
           createAnalysis: this.props.createAnalysis

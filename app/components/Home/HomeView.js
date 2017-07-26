@@ -8,30 +8,28 @@ import Start from '../Start';
 import Nav from '../Nav';
 
 
+
 const HomeView = (props) => {
-  const loggedIn = props.loggedIn
-  console.log("Checking auth on HomeView: ", loggedIn);
-  if (loggedIn) {
-    return (
+  const loggedIn = props.auth.loggedIn
+  return <div >
+    <Header />
+    {(loggedIn) ?
       <div>
-        {loggedIn}
         <Start />
         <a href="/logout">Logout</a>
-      </div>)
-    } else {
-      return (
+      </div>
+      :
+      <div>
         <div>
-          {loggedIn}
-          <div>
-            <h3>Login to begin</h3>
-            <a href="/login">Login</a>
-          </div>
+          <h3>Login to begin</h3>
+          <a href="/login">Login</a>
         </div>
-      )
+      </div>
     }
-  }
+  </div>
+}
 
-  // <a href="/logout">Logout</a>
+// <a href="/logout">Logout</a>
 
 
-  export default HomeView;
+export default HomeView;

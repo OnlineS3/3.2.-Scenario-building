@@ -19,7 +19,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <HomeView loggedIn={this.props.auth}/>
+      <HomeView auth={this.props.auth}/>
     )
   }
 }

@@ -1,10 +1,10 @@
 import analysisData from '../data/analysisdata';
+import 'whatwg-fetch';
 
-
-const updateAnalysisItems = (items) => {
+const updateAnalysis = (analysis) => {
   return {
     type: 'UPDATE_DATA',
-    data: items
+    data: analysis
   }
 }
 
@@ -131,7 +131,8 @@ export const loadAnalysis = (analysisId) => {
     fetch('http://localhost:8080/api/analysis/' + analysisId, options).then((response) => {
       return response.json().then((json) => {
         if (json.status == "ok") {
-          dispatch(updateAnalysisItems(json.analysis.items))
+          console.log(json);
+          dispatch(updateAnalysis(json.analysis));
         } else {
           console.log("No items returned: ", json.status);
         }

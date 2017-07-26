@@ -1,4 +1,4 @@
-
+import 'whatwg-fetch';
 
 
 export const checkAuthentication = () => {
@@ -17,7 +17,7 @@ export const checkAuthentication = () => {
         console.log("Updating auth: ", json);
         dispatch({
           type: 'UPDATE_AUTH',
-          auth: json.loggedIn
+          auth: json
         })
       })
     })

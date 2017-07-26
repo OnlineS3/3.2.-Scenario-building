@@ -17,7 +17,7 @@ class ImpactGraph extends React.Component {
 
   render() {
     return(
-      <ImpactGraphView props={{data: this.props.data}}/>
+      <ImpactGraphView props={{data: this.props.data.items}}/>
     )
   }
 }

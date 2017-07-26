@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Field, reduxForm } from 'redux-form';
+import Truncate from 'react-truncate';
 
 import Table from '../Table';
 
@@ -12,32 +13,35 @@ const analysesList = (props) => {
     return (
       <div>
         {analyses.map((analysis, i) => (
-          <div key={i} className="flex-container">
-            <div>
-              <p>{analysis.name}</p>
-            </div>
-            <div>
-              <Link to={`/analysis/${analysis.id}`}>Edit</Link>
-            </div>
-            <div>
-              <button onClick={() => deleteAnalysis(analysis.id)}>Delete</button>
-            </div>
+          <div key={i} className="default-neat-grid">
+            <div className="default-neat-grid__column-8 grid-item">
+              <Link to={`/analysis/${analysis.id}`}><Truncate>
+                {analysis.name}
+              </Truncate>
+            </Link>
           </div>
-        ))}
-      </div>
-    )
-  }
+          <div className="default-neat-grid__column-4 grid-item">
+            <button className="button button--basic" onClick={() => deleteAnalysis(analysis.id)}>Delete</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
 }
 
 let NewAnalysisForm = (props) => {
   const { handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit} >
+    <form onSubmit={handleSubmit} className="default-neat-grid analyses-list">
       <div>
-        <label htmlFor="analysisName">Analysis name</label>
-        <Field name="analysisName" component="input" type="text" />
+        <div className="default-neat-grid__column-8 grid-item">
+          <Field placeholder="Analysis name" name="analysisName" component="input" type="text" className="input input--analysis" />
+        </div>
       </div>
-      <button type="submit">Create</button>
+      <div className="default-neat-grid__column-4 grid-item">
+        <button className="button button--create" type="submit">Create</button>
+      </div>
     </form>
   )
 }
@@ -49,7 +53,7 @@ NewAnalysisForm = reduxForm({
 const StartView = ({props}) => {
   const { analyses, createAnalysis, deleteAnalysis } = props;
   return(
-    <div>
+    <div className="content-wrapper">
       <h3>Your analyses</h3>
       {analysesList({analyses: analyses, deleteAnalysis: deleteAnalysis})}
       <NewAnalysisForm onSubmit={createAnalysis} />

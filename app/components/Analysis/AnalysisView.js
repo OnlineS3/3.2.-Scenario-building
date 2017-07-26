@@ -7,10 +7,9 @@ import ImpactGraph from '../ImpactGraph';
 
 
 const AnalysisView = (props) => {
-  const analysisId = props.analysisId;
+  const { analysisId, analysisData } = props;
   return <div className="analysisView">
-    <h2>Analysis</h2>
-    <p>{analysisId}</p>
+    <p>{analysisData.name}</p>
     <ImpactGraph />
     <Table analysisId={analysisId}/>
   </div>

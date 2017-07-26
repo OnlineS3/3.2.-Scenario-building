@@ -8,9 +8,9 @@ import { createBrowserHistory } from 'history';
 import rootReducer from './reducers/index';
 
 const defaultState = {
-  analysisData: [],
+  analysisData: {analysis: {name: ""}, items: []},
   analyses: [],
-  auth: false
+  auth: {loggedIn: false}
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk),

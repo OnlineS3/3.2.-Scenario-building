@@ -7,7 +7,6 @@ import { ScatterPlot } from 'react-d3-basic';
 const ImpactGraphView = ({props}) => {
 
   const { data } = props;
-  console.log("Attempting to render: ", data);
   const width = 500,
   height = 500,
   margins = {left: 50, right: 50, top: 50, bottom: 50},
@@ -45,7 +44,6 @@ const ImpactGraphView = ({props}) => {
         scatterClassName = 'test-line-dot-class'
 
   return <div>
-      <h3>ImpactGraphView</h3>
       <ScatterPlot
         data={data}
         width={width}

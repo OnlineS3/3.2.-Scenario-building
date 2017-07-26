@@ -19,17 +19,16 @@ class Nav extends React.Component {
         return <a className="Nav__link" href="/login">Login</a>
       }
     }
+    console.log("auth: ", this.props.auth);
 
     return(
       <nav className="Nav">
         <div className="Nav__container">
-          <Link to="/" className="Nav__brand">
-            Home
-          </Link>
+          {(this.props.auth.loggedIn) ? <h3>Hi, {this.props.auth.username}</h3> : null}
           <div className="Nav__right">
             <ul className="Nav__item-wrapper">
               <li className="Nav__item">
-                {logInOut(this.props.auth)}
+                {logInOut(this.props.auth.loggedIn)}
               </li>
             </ul>
           </div>

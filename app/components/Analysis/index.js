@@ -18,7 +18,7 @@ class Analysis extends React.Component {
 
   render() {
     return (
-      <AnalysisView analysisId={this.props.params.analysisId} />
+      <AnalysisView analysisId={this.props.params.analysisId} analysisData={this.props.analysisData} />
     )
     // return(
     //   <AnalysisView analysisId={this.props.params.analysisId} />
@@ -27,7 +27,9 @@ class Analysis extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log("MY ANALYSIS DATA: ", state.analysisData);
   return {
+    analysisData: state.analysisData
   }
 }
 
