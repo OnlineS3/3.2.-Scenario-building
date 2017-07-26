@@ -5,9 +5,13 @@ import Nav from './Nav';
 
 const Header = () => {
   return (
-    <div className="header-wrapper">
-      <h1>Scenario building</h1>
-      <Nav />
+    <div className="header">
+      <div className="header-container">
+        <div className="header-heading">
+          <h1>Scenario building</h1>
+        </div>
+        <Nav />
+      </div>
     </div>
   )
 }

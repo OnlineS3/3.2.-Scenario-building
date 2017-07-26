@@ -1,0 +1,15 @@
+@import 'variables';
+
+.header {
+  background-color: $light-blue;
+  display: table-row;
+  height: 1em;
+
+  .header-container {
+    padding-left: 5%;
+  }
+  .header-heading {
+    text-align: center;
+  }
+
+}

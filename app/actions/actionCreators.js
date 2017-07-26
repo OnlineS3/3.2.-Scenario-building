@@ -1,5 +1,6 @@
 import analysisData from '../data/analysisdata';
 import 'whatwg-fetch';
+import { reset } from 'redux-form';
 
 const updateAnalysis = (analysis) => {
   return {
@@ -86,6 +87,8 @@ export const createAnalysis = (values) => {
           console.log("Failure: ", json.status)
         }
       })
+    }).then(() => {
+      dispatch(reset('newAnalysis'));
     })
   }
 }
@@ -166,6 +169,8 @@ export const createItem = (item, analysisId) => {
           console.log(json.status);
         }
       })
+    }).then(() => {
+      dispatch(reset('newItem'));
     })
   }
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
+import { reset } from 'redux-form';
 
 import store from '../../store';
 
@@ -35,11 +36,9 @@ class Table extends React.Component {
   render() {
     return(
       <TableView props={{
-          analysisId: this.props.analysisId,
-          rows: this.props.analysisData.items,
+          items: this.props.analysisData.items,
           removeItemFromAnalysis: this.removeItemFromAnalysis,
-          addItemToAnalysis: this.addItemToAnalysis,
-          createAnalysis: this.props.createAnalysis
+          addItemToAnalysis: this.addItemToAnalysis
         }}
         />
     )

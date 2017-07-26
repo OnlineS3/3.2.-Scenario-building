@@ -12,7 +12,6 @@ import Nav from '../Nav';
 const HomeView = (props) => {
   const loggedIn = props.auth.loggedIn
   return <div >
-    <Header />
     {(loggedIn) ?
       <div>
         <Start />

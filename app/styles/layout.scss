@@ -8,6 +8,10 @@
   @include grid-column(2);
 }
 
+.default-neat-grid__column-3 {
+  @include grid-column(3);
+}
+
 .default-neat-grid__column-4 {
   @include grid-column(4);
 }
@@ -33,4 +37,9 @@
 
 .analysis-input {
   max-width: 90%;
+}
+
+.scrollview {
+  overflow: scroll;
+  height: 15em;
 }

@@ -24,7 +24,7 @@ class Nav extends React.Component {
     return(
       <nav className="Nav">
         <div className="Nav__container">
-          {(this.props.auth.loggedIn) ? <h3>Hi, {this.props.auth.username}</h3> : null}
+          <Link to="/">Home</Link>
           <div className="Nav__right">
             <ul className="Nav__item-wrapper">
               <li className="Nav__item">
