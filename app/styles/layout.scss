@@ -1,0 +1,36 @@
+@import 'neat/neat';
+
+.default-neat-grid {
+  @include grid-container;
+}
+
+.default-neat-grid__column-2 {
+  @include grid-column(2);
+}
+
+.default-neat-grid__column-4 {
+  @include grid-column(4);
+}
+
+.default-neat-grid__column-6 {
+  @include grid-column(6);
+}
+
+.default-neat-grid__column-8 {
+  @include grid-column(8);
+}
+
+.grid-item {
+  text-align: center;
+  vertical-align: middle;
+  height: 3em;
+  line-height: 3em;
+  min-width: 6em;
+}
+
+.analyses-list {
+}
+
+.analysis-input {
+  max-width: 90%;
+}

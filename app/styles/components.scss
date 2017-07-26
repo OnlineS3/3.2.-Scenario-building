@@ -1,0 +1,30 @@
+.button {
+  background-color: $white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0.6em 1.5em;
+  border-radius: 4px;
+
+  &--basic {
+    color: $blue;
+    border: 2px $blue solid;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--create {
+    color: $green;
+    border: 2px $green solid;
+  }
+}
+
+.input {
+  min-width: 90%;
+  max-width: 10em;
+
+  &--analysis {
+
+  }
+}
