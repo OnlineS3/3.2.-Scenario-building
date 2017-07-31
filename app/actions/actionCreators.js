@@ -41,7 +41,7 @@ export const loadAnalyses = () => {
       },
       credentials: 'same-origin'
     }
-    fetch('http://localhost:8080/api/analyses', options).then((response) => {
+    fetch('/api/analyses', options).then((response) => {
       return response.json().then((json) => {
         console.log("Response: ", json.analyses);
         if (json.analyses) {
@@ -76,7 +76,7 @@ export const createAnalysis = (values) => {
       credentials: 'same-origin',
       body: JSON.stringify({name: values.analysisName})
     }
-    fetch('http://localhost:8080/api/analysis', options).then((response) => {
+    fetch('/api/analysis', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         //dispatch(addAnalysisToState(json))
@@ -104,7 +104,7 @@ export const deleteAnalysis = (id) => {
       credentials: 'same-origin',
       body: JSON.stringify({analysisId: id})
     }
-    fetch('http://localhost:8080/api/analysis', options).then((response) => {
+    fetch('/api/analysis', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         //dispatch(addAnalysisToState(json))
@@ -131,7 +131,7 @@ export const loadAnalysis = (analysisId) => {
       credentials: 'same-origin'
     }
     console.log("Fetching analysis: ", analysisId);
-    fetch('http://localhost:8080/api/analysis/' + analysisId, options).then((response) => {
+    fetch('/api/analysis/' + analysisId, options).then((response) => {
       return response.json().then((json) => {
         if (json.status == "ok") {
           console.log(json);
@@ -156,7 +156,7 @@ export const createItem = (item, analysisId) => {
       credentials: 'same-origin',
       body: JSON.stringify({item: item, analysisId: analysisId})
     }
-    fetch('http://localhost:8080/api/item', options).then((response) => {
+    fetch('/api/item', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         console.log("Done.", json);
@@ -185,7 +185,7 @@ export const deleteItem = (itemId) => {
       credentials: 'same-origin',
       body: JSON.stringify({itemId: itemId})
     }
-    fetch('http://localhost:8080/api/item', options).then((response) => {
+    fetch('/api/item', options).then((response) => {
       return response.json().then((json) => {
         if (json.status == "ok") {
           dispatch({

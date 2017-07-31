@@ -11,7 +11,7 @@ export const checkAuthentication = () => {
       },
       credentials: 'same-origin'
     }
-    fetch('http://localhost:8080/api/auth', options).then((response) => {
+    fetch('/api/auth', options).then((response) => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         console.log("Updating auth: ", json);
