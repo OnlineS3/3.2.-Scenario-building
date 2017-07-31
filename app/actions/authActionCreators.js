@@ -15,7 +15,7 @@ export const checkAuthentication = () => {
       return response.json().then((json) => {
         // dispatch(updateStoreWith(json)); // Do something with the fetched data
         console.log("Updating auth: ", json);
-        dispatch({
+        return dispatch({
           type: 'UPDATE_AUTH',
           auth: json
         })

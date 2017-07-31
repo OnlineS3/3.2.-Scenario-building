@@ -60,6 +60,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static('public'));
+
 
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -92,7 +94,7 @@ app.all(
     scope: 'openid profile'
   }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/application');
   });
 app.get('/logout', function(req, res) {
   req.logout();
@@ -107,7 +109,7 @@ app.get(
   function(req, res) {
     console.log("Authenticated succesfully, attempting to create a user.");
     userDAO.checkAndCreate(req.session.passport.user.displayName);
-    res.redirect(req.session.returnTo || '/');
+    res.redirect(req.session.returnTo || '/application');
   }
 );
 

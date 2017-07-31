@@ -74,6 +74,9 @@ router.post('/analysis', (req, res) => {
       } else {
         return res.status(404).json({"status": "Failed to create a new analysis"});
       }
+    }).catch((err) => {
+      console.log("err: ", err);
+      return res.status(400).json({"status": "Failed to create a new analysis"});
     })
   } else {
     return res.status(403).json({"status": "Unauthorized"});
@@ -121,6 +124,9 @@ router.post('/item', (req, res) => {
           } else {
             return res.status(403).json({"status": "No item was created."});
           }
+        }).catch((err) => {
+          console.log("err: ", err);
+          return res.status(400).json({"status": "Failed to create a new analysis"});
         });
       }
     });

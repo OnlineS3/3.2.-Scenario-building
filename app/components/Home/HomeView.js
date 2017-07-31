@@ -15,7 +15,6 @@ const HomeView = (props) => {
     {(loggedIn) ?
       <div>
         <Start />
-        <a href="/logout">Logout</a>
       </div>
       :
       <div>

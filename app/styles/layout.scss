@@ -43,3 +43,27 @@
   overflow: scroll;
   height: 15em;
 }
+
+
+$responsive-layout-grid: (
+  columns: 1,
+  gutter: 1rem,
+);
+
+$responsive-layout-grid--tablet-up: (
+  columns: 6,
+  gutter: 1rem,
+  media: "(min-width: 500px)",
+);
+.responsive-layout {
+  @include grid-container;
+}
+
+.responsive-layout__column {
+  @include grid-column(1, $responsive-layout-grid);
+  margin-bottom: 2rem;
+
+  @include grid-media($responsive-layout-grid--tablet-up) {
+    @include grid-column(2);
+  }
+}

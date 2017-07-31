@@ -17,14 +17,15 @@ const ImpactGraphView = ({props}) => {
   chartSeries = [
     {
       field: 'impact',
-      name: 'Impact',
+      name: 'Analysis item',
       symbol: 'circle',
       symbolSize: 20
     }
   ]
   // your x accessor
   const x = (d) => {
-    return d.uncertainty};
+    return d.uncertainty
+  };
 
   const xScale = 'linear',
         xRange = [0, width - margins.left - margins.right],

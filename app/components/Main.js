@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { render } from 'react-dom';
+
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
@@ -13,13 +15,25 @@ class Main extends React.Component {
     this.props.checkAuthentication()
   }
 
+  componentDidUpdate() {
+    const loginHandlers = <div>
+      {(this.props.auth.loggedIn) ?
+        <a href="/logout"><button className='login-btn'>Logout</button></a>
+        :
+        <div>
+          <a href="/login"><button className='login-btn'>Log in</button></a>
+          <a href="/login"><button className='register-btn'>Register</button></a>
+        </div>
+      }
+    </div>
+    render(loginHandlers, document.getElementById('login-handlers'));
+  }
+
   render() {
     return (
       <div className="site-wrapper">
-        <Header />
         <div className="site-cell">
           <div className="site-cell-content">
-
             {React.cloneElement(this.props.children, this.props)}
           </div>
         </div>

@@ -9,15 +9,28 @@ module.exports = function(sequelize, DataTypes) {
     },
     label: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
     },
     uncertainty: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 10,
+        isInt: true
+      }
     },
     impact: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 10,
+        isInt: true
+      }
     }
   });
 
