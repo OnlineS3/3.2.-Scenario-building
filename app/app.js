@@ -14,6 +14,19 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
+import values from 'object.values';
+import Promise from 'promise-polyfill';
+import assign from 'object.assign';
+
+if (!window.Promise) {
+  window.Promise = Promise;
+}
+if (!Object.values) {
+    values.shim();
+}
+if (!Object.assign) {
+    Object.assign = assign.shim();
+}
 
 const router = (
   <Provider store={store}>
