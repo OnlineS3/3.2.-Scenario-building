@@ -19,7 +19,7 @@ class ContentPage extends React.Component {
     let section = sections[this.props.params.pageName]
     section = (section) ? section : sections["about"]
     return(
-      <ContentPageView props={{section: section}}/>
+      <ContentPageView props={{pageName: this.props.params.pageName}}/>
     )
   }
 }
