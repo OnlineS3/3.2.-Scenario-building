@@ -45,12 +45,49 @@
 .input {
   min-width: 90%;
   max-width: 10em;
+}
 
-  &--analysis {
 
+.Collapsible__trigger {
+  width: 100%;
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	text-align: left;
+  display: block;
+  font-family: Tahoma;
+  font-weight: 800;
+  font-size: 0.8em;
+  color:black;
+
+  &:hover {
+    background-color: #ddd;
+  }
+  &.is-closed {
+    &:after {
+    	content: '\02795';
+    	font-size: 13px;
+    	color: #777;
+    	float: right;
+    	margin-left: 5px;
+    }
+  }
+  &.is-open {
+    &:after {
+    	content: "\2796";
+      float: right;
+    }
   }
 }
 
-.analysis-item {
+.Collapsible {
+  margin: 0 auto;
+  margin: 20px;
+  background-color: white;
+}
 
+.Collapsible__contentInner {
+  border: 3px solid #eeeeee;
+  text-align: left;
 }
