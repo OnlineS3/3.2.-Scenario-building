@@ -9,9 +9,6 @@ const AboutView = () => {
     <div>
       <div>
         <h1>About</h1>
-        <Collapsible trigger="This is the test text that you can click to open the accordion.">
-          <p>Add content here</p>
-        </Collapsible>
         <p>Scenario building starts with the determination of the scope of the scenario work. In the context of RIS3, it may be how the nation/region will evolve in the next 20-30 years related to political, environmental, social and technological issues. </p>
         <p>As a whole, scenario process in this tool involves the following 5 steps:</p>
         <ol>
