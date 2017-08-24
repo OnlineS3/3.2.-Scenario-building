@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import AboutView from './content/AboutView';
-import FirstGuidelineView from './content/FirstGuidelineView';
+import GuideView from './content/GuideView';
 import SecondGuidelineView from './content/SecondGuidelineView';
 import ThirdGuidelineView from './content/ThirdGuidelineView';
 
@@ -10,7 +10,7 @@ import ThirdGuidelineView from './content/ThirdGuidelineView';
 const content = (pageName) => {
   switch (pageName) {
     case 'about': return <AboutView />
-    case 'guideline1': return <FirstGuidelineView />
+    case 'guide': return <GuideView />
     case 'guideline2': return <SecondGuidelineView />
     case 'guideline3': return <ThirdGuidelineView />
     default: return <AboutView />
