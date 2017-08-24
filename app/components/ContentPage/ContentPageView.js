@@ -3,16 +3,14 @@ import { Link } from 'react-router';
 
 import AboutView from './content/AboutView';
 import GuideView from './content/GuideView';
-import SecondGuidelineView from './content/SecondGuidelineView';
-import ThirdGuidelineView from './content/ThirdGuidelineView';
+import RelatedDocumentsView from './content/RelatedDocumentsView';
 
 
 const content = (pageName) => {
   switch (pageName) {
     case 'about': return <AboutView />
     case 'guide': return <GuideView />
-    case 'guideline2': return <SecondGuidelineView />
-    case 'guideline3': return <ThirdGuidelineView />
+    case 'related documents': return <SecondGuidelineView />
     default: return <AboutView />
   }
 }
