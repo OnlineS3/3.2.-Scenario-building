@@ -22,7 +22,7 @@ const RelatedDocuments = () => {
 		<p><a href="http://www.futuresplatform.com/">Futures Platform</a><br/>
 		<a href="https://www.itonics.de/software/itonics-strategic-foresight/">ITONICS Software</a></p>
 
-		<h1>External documents for understanding scenario building</h2>
+		<h1>External documents for understanding scenario building</h1>
 		<p><a href="http://forlearn.jrc.ec.europa.eu/guide/4_methodology/meth_scenario.htm">The JRC European Commission FOR-LEARN Guide for Scenario Building</a><br/>
 		<a href="https://www.slideshare.net/adgo/scenario-building-workshop-how-to-build-and-use-scenarios">Scenario Building Workshop - How to Build and Use Scenarios by Adam Gordon</a><br/>
 		<a href="http://webarchive.nationalarchives.gov.uk/20140108141323/http:/www.bis.gov.uk/assets/foresight/docs/horizon-scanning-centre/foresight_scenario_planning.pdf">Scenario Planning Guide by the Government Office of Science (UK)</a></p>
