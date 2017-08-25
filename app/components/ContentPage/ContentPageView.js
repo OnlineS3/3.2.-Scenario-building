@@ -10,7 +10,7 @@ const content = (pageName) => {
   switch (pageName) {
     case 'about': return <AboutView />
     case 'guide': return <GuideView />
-    case 'related documents': return <SecondGuidelineView />
+    case 'related_documents': return <RelatedDocumentsView />
     default: return <AboutView />
   }
 }
