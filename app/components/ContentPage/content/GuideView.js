@@ -46,35 +46,35 @@ const GuideView = () => {
 			<h3>Political factors</h3>
 			<p>Political factors are always related to the activities and decisions of the government, in the case of an EU region, the government can mean both the national government and the EU policies and actions.</p>
 			<p>Questions to consider:</p>
-			<p><i>Are there going to be great changes in tax policies? Labour laws? Environmental laws?<br>
-			Is the government stable in the future?<br>
-			What kind of impact will the government have on health, education and infrastructure in the region?<br>
-			How will the tariffs and trade restrictions develop in the future?<br>
+			<p><i>Are there going to be great changes in tax policies? Labour laws? Environmental laws?<br/>
+			Is the government stable in the future?<br/>
+			What kind of impact will the government have on health, education and infrastructure in the region?<br/>
+			How will the tariffs and trade restrictions develop in the future?<br/>
 			</i></p>
 			
 			<h3>Environmental factors</h3>
 			<p>Global warming, weather and other environmental factors pose great changes to economies worldwide. Especially regions with industries such as tourism, forestry, maritime and agriculture may be affected by environmental factors.</p>
 			<p>Questions to consider:</p>
-			<p><i>How will the global warming affect the region?<br>
-			Will international environmental issues result in great international migration?<br>
-			Is it necessary for the region to change its energy sources in the future?<br>
-			How are environmental factors going to affect the greatest industries in the region?<br>
+			<p><i>How will the global warming affect the region?<br/>
+			Will international environmental issues result in great international migration?<br/>
+			Is it necessary for the region to change its energy sources in the future?<br/>
+			How are environmental factors going to affect the greatest industries in the region?<br/>
 			</i></p>
 			
 			<h3>Social factors</h3>
 			<p>Social factors include things related to common attitudes, culture and population. Moreover, social trends will greatly affect many aspects of the region. For example, the ageing population might indicate a smaller proportion of workforce (perhaps conveying rising labour costs) and rising demand for health services.</p>
 			<p>Questions to consider: </p>
-			<p><i>What are the age distribution and population growth like in the future?<br>
-			Will people be more conscious of their health?<br>
-			Will there be a strong national culture in the future or will there be strong sub-cultures instead?<br>
+			<p><i>What are the age distribution and population growth like in the future?<br/>
+			Will people be more conscious of their health?<br/>
+			Will there be a strong national culture in the future or will there be strong sub-cultures instead?<br/>
 			What are will people’s attitudes towards career choices, safety and domestic work like be like?
 			</i></p>
 			
 			<h3>Technological factors</h3>
 			<p>Technological aspects include things like automation, R&D activity and technological change related factors. Also, the pace of technological advancement is a technological factor.</p>
 			<p>Questions to consider:</p>
-			<p><i>Will emerging technologies create new markets and opportunities for the region?<br>
-			Is automation going to replace many jobs in the future?<br>
+			<p><i>Will emerging technologies create new markets and opportunities for the region?<br/>
+			Is automation going to replace many jobs in the future?<br/>
 			Can the region benefit from innovations around an emerging technology?
 			</i></p>
 			
@@ -160,19 +160,19 @@ const GuideView = () => {
 		<p>The final scenario descriptions should also include visualisations of the scenarios. Hence, the description could actually include images, comics, videos and other kinds of visual aids. The final descriptions could be made in a variety of formats. They can include slide presentations or videos, for instance.</p>
 		
 		<h2>Checklist for scenarios</h2>
-		<p><i>Are the scenarios plausible?<br>
-		Is there a logical chain of events that would lead to each of the scenarios?<br>
-		If the scenarios really happen, what else needs to happen? </i>(For example, if the scenario is based on the presumption that there will be more internet security problems it’s necessary to incorporate a reason for that)<br>
-		<i>Are the scenarios internally consistent? </i>There shouldn’t be any events or drivers that exclude one another.<br>
-		<i>Are the scenarios differentiated from one another?<br>
-		Do scenarios challenge the conventional thinking or are they somewhat unsurprising?<br></i>
-		Scenarios should shed light on unconventional possibilities and help the region to prepare for things that are not already expected.<br>
-		<i>Are the scenario titles descriptive?<br>
-		Are the storylines fascinating?<br>
-		Are there any visual materials to elaborate the scenarios?<br></i>
-		It’s also beneficial to do an actor analysis in this step. Hence, think about different stakeholders in the scenario and assess their interests. <br>
-		<i>Are there groups of people who benefit or would drive this scenario?</i> <br>
-		If a scenario is the worst option for all interest groups it’s probably not a plausible scenario. <br>
+		<p><i>Are the scenarios plausible?<br/>
+		Is there a logical chain of events that would lead to each of the scenarios?<br/>
+		If the scenarios really happen, what else needs to happen? </i>(For example, if the scenario is based on the presumption that there will be more internet security problems it’s necessary to incorporate a reason for that)<br/>
+		<i>Are the scenarios internally consistent? </i>There shouldn’t be any events or drivers that exclude one another.<br/>
+		<i>Are the scenarios differentiated from one another?<br/>
+		Do scenarios challenge the conventional thinking or are they somewhat unsurprising?<br/></i>
+		Scenarios should shed light on unconventional possibilities and help the region to prepare for things that are not already expected.<br/>
+		<i>Are the scenario titles descriptive?<br/>
+		Are the storylines fascinating?<br/>
+		Are there any visual materials to elaborate the scenarios?<br/></i>
+		It’s also beneficial to do an actor analysis in this step. Hence, think about different stakeholders in the scenario and assess their interests. <br/>
+		<i>Are there groups of people who benefit or would drive this scenario?</i> <br/>
+		If a scenario is the worst option for all interest groups it’s probably not a plausible scenario. <br/>
 		Note here that scenarios shouldn’t be assessed regarding their probability. Thus, there shouldn’t be any probabilities or probability analyses in the scenario descriptions.</p>
 		
 		</Collapsible>
