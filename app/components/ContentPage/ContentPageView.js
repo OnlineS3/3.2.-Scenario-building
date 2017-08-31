@@ -5,6 +5,7 @@ import AboutView from './content/AboutView';
 import GuideView from './content/GuideView';
 import RelatedDocumentsView from './content/RelatedDocumentsView';
 
+import SideBar from './SideBar';
 
 const content = (pageName) => {
   switch (pageName) {
@@ -18,10 +19,19 @@ const content = (pageName) => {
 const ContentPage = ({props}) => {
   const { pageName } = props;
   console.log(pageName);
+  const style = {
+      position: "relative",
+      float: "left",
+      maxWidth: "840px",
+      marginBottom: "50px"
+  }
   return (
-    <section className="content-section">
-      {content(pageName)}
-    </section>
+    <div>
+      <section style={style} className="content-section">
+        {content(pageName)}
+      </section>
+      <SideBar></SideBar>
+    </div>
   )
 
 }
