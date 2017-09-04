@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const ApplicationMenuView = ({props}) => {
   return (
     <section className="content-section">
-      <h1>Scenario building applications</h1>
+      <h1>Scenario building templates</h1>
       <div className="responsive-layout">
         <div className="responsive-layout__column">
           <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"><button className="button button--menu">Application guide PDF</button></a>
