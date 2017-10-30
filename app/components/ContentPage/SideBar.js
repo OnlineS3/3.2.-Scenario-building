@@ -14,7 +14,7 @@ const SideBar = ({props}) => {
   }
   return (
     <aside style={style}>
-      <SideBarButton text="Application guide PDF" link="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"></SideBarButton>
+      <SideBarButton text="Download guide" alt={true} link="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"></SideBarButton>
       <SideBarButton text="Scenario building process template" link="http://www.s3platform.eu/wp-content/uploads/2017/08/Scenario-process-template.pdf"></SideBarButton>
       <SideBarButton text="PEST-analysis template" link="http://www.s3platform.eu/wp-content/uploads/2017/07/Pest_pdf_template.pdf"></SideBarButton>
       <SideBarButton text="Impact analysis template" link="/application"></SideBarButton>

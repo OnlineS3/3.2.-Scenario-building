@@ -14,9 +14,9 @@ const SideBarButton = (props) => {
   	width: "12rem",
   	"fontWeight": 600,
     display: "inline-block",
-    border: "solid 1px red",
+    border: props.alt ? "solid 1px red" : "solid 1px #007ce2",
   	padding: "5px 8px",
-  	background: "linear-gradient(#ff6b6b,#ec2929)"
+  	background: props.alt ? "linear-gradient(#ff6b6b,#ec2929)" : "linear-gradient(#2197f9,#007ce2)"
   }
   const linkStyle = {
     color: "#FFF",
