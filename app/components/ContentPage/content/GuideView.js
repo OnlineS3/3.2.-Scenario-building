@@ -38,11 +38,13 @@ const GuideView = () => {
 			<p>There is no basic workshop tool within the Online S3 toolset, but the Online S3 4.1 EDP focus group tool can give great new ideas for workshops.</p>
 			<p>Read more about the EDP focus group tool <a href="http://edp.s3platform.eu/">here</a>.</p>
 			<p>The uncertainties and trends can also be gathered by a literature search. There are plenty of international statistic data that can reveal underlying regional trends. Furthermore, there are multiple organisations that map important global and regional trends and future forecasts. See the related documents for external resources on statistical data and foresight study.</p>
+
 			<h2>Using PEST to map uncertainties and trends</h2>
-			<p>PEST (Political, Environmental, Social, Technological) - analysis is a framework which allows structuring uncertainties and trends in a useful form. More formally, PEST-analysis is an analytical tool for strategic management which helps company management to understand the macro-environment of the company. Consequently, regional foresight facilitators can use the framework to construct a robust understanding of the regional trends and uncertainties. Moreover, the framework enables regions to identify which PEST sectors might need more thorough mapping. </p>
+			<p>PEST (Political, Economic, Social, Technological) - analysis is a framework which allows structuring uncertainties and trends in a useful form. More formally, PEST-analysis is an analytical tool for strategic management which helps company management to understand the macro-environment of the company. Consequently, regional foresight facilitators can use the framework to construct a robust understanding of the regional trends and uncertainties. Moreover, the framework enables regions to identify which PEST sectors might need more thorough mapping. </p>
 			<p>Furthermore, since there is a dreadful amount of factors that may affect the region’s future, the uncertainties become easier to assess when they are categorised in the PEST categories.</p>
-			<p>In conclusion, the aim of the PEST framework is to categorise uncertainties and trends into four categories. Those that raise from the political context of the region, from environmental issues, from social factors and from technological trends and development.</p>
+			<p>In conclusion, the aim of the PEST framework is to categorise uncertainties and trends into four categories. Those that raise from the political context of the region, from economical issues, from social factors and from technological trends and development.</p>
 			<p><img src="http://www.s3platform.eu/wp-content/uploads/2017/07/Pest_pdf_1.jpg" alt=""></img></p>
+      <p>The tool includes examples of trends and uncertainties which support regions to start working with the templates.</p>
 
 			<h3>Political factors</h3>
 			<p>Political factors are always related to the activities and decisions of the government, in the case of an EU region, the government can mean both the national government and the EU policies and actions.</p>
@@ -53,13 +55,14 @@ const GuideView = () => {
 			How will the tariffs and trade restrictions develop in the future?<br/>
 			</i></p>
 
-			<h3>Environmental factors</h3>
-			<p>Global warming, weather and other environmental factors pose great changes to economies worldwide. Especially regions with industries such as tourism, forestry, maritime and agriculture may be affected by environmental factors.</p>
+			<h3>Economic factors</h3>
+      <p>Economic factors relate to the global, European, national and regional development. There are major uncertainties related to global trade, affected also by political movements.</p>
+
 			<p>Questions to consider:</p>
-			<p><i>How will the global warming affect the region?<br/>
-			Will international environmental issues result in great international migration?<br/>
-			Is it necessary for the region to change its energy sources in the future?<br/>
-			How are environmental factors going to affect the greatest industries in the region?<br/>
+			<p><i>How will global free trade agreements develop?<br/>
+      How will the Euro develop in relation to foreign currencies?<br/>
+      How various industries, for example real estate and finance sector develop?<br/>
+      What are the trends in employement rate?
 			</i></p>
 
 			<h3>Social factors</h3>
