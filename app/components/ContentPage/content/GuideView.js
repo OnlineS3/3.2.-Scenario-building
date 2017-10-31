@@ -43,7 +43,6 @@ const GuideView = () => {
 			<p>PEST (Political, Economic, Social, Technological) - analysis is a framework which allows structuring uncertainties and trends in a useful form. More formally, PEST-analysis is an analytical tool for strategic management which helps company management to understand the macro-environment of the company. Consequently, regional foresight facilitators can use the framework to construct a robust understanding of the regional trends and uncertainties. Moreover, the framework enables regions to identify which PEST sectors might need more thorough mapping. </p>
 			<p>Furthermore, since there is a dreadful amount of factors that may affect the region’s future, the uncertainties become easier to assess when they are categorised in the PEST categories.</p>
 			<p>In conclusion, the aim of the PEST framework is to categorise uncertainties and trends into four categories. Those that raise from the political context of the region, from economical issues, from social factors and from technological trends and development.</p>
-			<p><img src="http://www.s3platform.eu/wp-content/uploads/2017/07/Pest_pdf_1.jpg" alt=""></img></p>
       <p>The tool includes examples of trends and uncertainties which support regions to start working with the templates.</p>
 
 			<h3>Political factors</h3>
