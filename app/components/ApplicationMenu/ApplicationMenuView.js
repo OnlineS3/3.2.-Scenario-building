@@ -14,7 +14,7 @@ const ApplicationMenuView = ({props}) => {
       <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Scenario-process-template.pdf"><button className="button button--menu">Scenario building process template</button></a>
     </div>
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Pest_pdf_template.pdf"><button className="button button--menu">PEST-analysis template</button></a>
+          <a href="/documents/Pest_template.pdf"><button className="button button--menu">PEST-analysis template</button></a>
         </div>
         <div className="responsive-layout__column">
           <Link to="/application"><button className="button button--menu">Impact analysis template</button></Link>
