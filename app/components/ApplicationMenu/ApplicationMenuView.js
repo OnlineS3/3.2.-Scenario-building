@@ -8,7 +8,7 @@ const ApplicationMenuView = ({props}) => {
       <h1>Scenario building templates</h1>
       <div className="responsive-layout">
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"><button className="button button--menu">Application guide PDF</button></a>
+          <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"><button className="button button--menu">Download guide</button></a>
         </div>
         <div className="responsive-layout__column">
           <a href="/documents/Pest_template.pdf"><button className="button button--menu">PEST-analysis template</button></a>
