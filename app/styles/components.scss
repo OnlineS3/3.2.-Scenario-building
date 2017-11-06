@@ -38,7 +38,14 @@
     height: 10em;
     width: 90%;
     margin: 1em;
+  }
 
+  &--alt {
+    background-color: $red;
+
+    &:hover {
+      color: $red;
+    }
   }
 }
 
