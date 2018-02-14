@@ -19,6 +19,8 @@ const AboutView = () => {
           <li>Describe scenarios in-depth (Scenario description template)</li>
           <li>Assess scenario implications and plan for preparatory actions (Preparation plan template)</li>
         </ol>
+
+        <p> In addition to the five templates, we provide one process template which links all the steps together into one document. </p> 
       </div>
     </div>
   )

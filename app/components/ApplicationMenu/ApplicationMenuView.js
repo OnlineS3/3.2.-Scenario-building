@@ -11,25 +11,22 @@ const ApplicationMenuView = ({props}) => {
           <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"><button className="button button--menu button--alt">Download guide</button></a>
         </div>
         <div className="responsive-layout__column">
-          <a href="/documents/Pest_template.pdf"><button className="button button--menu">PEST-analysis template</button></a>
+          <a href="/documents/Pest_template.pdf"><button className="button button--menu">Step 1: PEST-analysis template</button></a>
         </div>
         <div className="responsive-layout__column">
-          <Link to="/application"><button className="button button--menu">Impact analysis template</button></Link>
+          <Link to="/application"><button className="button button--menu">Step 2: Impact analysis template</button></Link>
         </div>
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_building_template.pdf"><button className="button button--menu">Scenario building template</button></a>
+          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_building_template.pdf"><button className="button button--menu">Step 3: Scenario building template</button></a>
         </div>
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_description_template.pdf"><button className="button button--menu">Scenario description template</button></a>
+          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_description_template.pdf"><button className="button button--menu">Step 4: Scenario description template</button></a>
         </div>
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_description_images_template.pdf"><button className="button button--menu">Scenario description template with image boxes</button></a>
+          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Preparation_plan_template.pdf"><button className="button button--menu">Step 5: Preparation plan template</button></a>
         </div>
         <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Preparation_plan_template.pdf"><button className="button button--menu">Preparation plan template</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="/documents/Scenario-process-template.pdf"><button className="button button--menu">Scenario building process template</button></a>
+          <a href="/documents/Scenario-process-template.pdf"><button className="button button--menu">Scenario building process template with all of the steps</button></a>
         </div>
       </div>
     </section>
