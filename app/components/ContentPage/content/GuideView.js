@@ -86,11 +86,11 @@ const GuideView = () => {
 			<ol>
 				<li>Click the PEST template or the Scenario building process template button on the right sidebar.</li>
 				<li>Open the PDF template in an internet browser (Chrome, Safari or Internet Explorer) or in a PDF reader (Adobe Acrobat, PDF X-change editor or iOS Preview). Note that is you want to save your progress, you need to save the file on your computer.</li>
-				<li>Replace the texts in the text fields with uncertainties and trends into specific PEST areas.</li>
+				<li>Replace the example texts in the text fields with uncertainties and trends related to your region.</li>
 			</ol>
 
 			<h2>The analysis can be more thorough</h2>
-			<p>The PEST-analysis can be extended for regional needs especially if regional workshops/surveys/expert interviews/literature suggests that there are great underlying phenomena that don’t fall into any of the PEST categories. Specifically, Legal and Economic factors are often added to the PEST factors.</p>
+			<p>The PEST-analysis can be extended for regional needs especially if regional workshops/surveys/expert interviews/literature suggests that there are great underlying phenomena that don’t fall into any of the PEST categories. Specifically, Legal and Environmental factors are often added to the PEST factors.</p>
 
         </Collapsible>
 
