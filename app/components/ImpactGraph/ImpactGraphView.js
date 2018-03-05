@@ -19,7 +19,8 @@ const ImpactGraphView = ({props}) => {
       field: 'impact',
       name: 'Analysis item',
       symbol: 'circle',
-      symbolSize: 20
+      symbolSize: 20,
+      color: '#ff0000'
     }
   ]
   // your x accessor

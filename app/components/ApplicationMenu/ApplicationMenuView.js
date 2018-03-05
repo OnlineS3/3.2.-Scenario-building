@@ -1,33 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
+import ApplicationMenuButton from './ApplicationMenuButton';
 const ApplicationMenuView = ({props}) => {
   return (
     <section className="content-section">
       <h1>Scenario building templates</h1>
       <div className="responsive-layout">
-        <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/08/Guideline_Tool_Scenario-Building_MR-2017-21-08.pdf"><button className="button button--menu button--alt">Download guide</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="/documents/Pest_template.pdf"><button className="button button--menu">Step 1: PEST-analysis template</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <Link to="/application"><button className="button button--menu">Step 2: Impact analysis template</button></Link>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_building_template.pdf"><button className="button button--menu">Step 3: Scenario building template</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_description_template.pdf"><button className="button button--menu">Step 4: Scenario description template</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="http://www.s3platform.eu/wp-content/uploads/2017/07/Preparation_plan_template.pdf"><button className="button button--menu">Step 5: Preparation plan template</button></a>
-        </div>
-        <div className="responsive-layout__column">
-          <a href="/documents/Scenario-process-template.pdf"><button className="button button--menu">Scenario building process template with all of the steps</button></a>
-        </div>
+        <ApplicationMenuButton text="Download guide" url="http://www.s3platform.eu/wp-content/uploads/Guideline_Tool_Scenario-Building_MR-2017-10-31.pdf" alt/>
+        <ApplicationMenuButton url="/documents/Pest_template.pdf" text="Step 1: PEST-analysis template" background="http://www.s3platform.eu/wp-content/uploads/template1.png" />
+        <ApplicationMenuButton url="/application" text="Step 2: Impact analysis template" background="http://www.s3platform.eu/wp-content/uploads/template2.png" />
+        <ApplicationMenuButton url="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_building_template.pdf" text="Step 3: Scenario building template" background="http://www.s3platform.eu/wp-content/uploads/template3.png" />
+        <ApplicationMenuButton url="http://www.s3platform.eu/wp-content/uploads/2017/07/Scenario_description_template.pdf" text="Step 4: Scenario description template" background="http://www.s3platform.eu/wp-content/uploads/template4.png" />
+        <ApplicationMenuButton url="http://www.s3platform.eu/wp-content/uploads/2017/07/Preparation_plan_template.pdf" text="Step 5: Preparation plan template" background="http://www.s3platform.eu/wp-content/uploads/template5.png" />
+        <ApplicationMenuButton url="/documents/Scenario-process-template.pdf" text="Scenario building process template with all of the steps"/>
       </div>
     </section>
   )
